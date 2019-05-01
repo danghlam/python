@@ -1,0 +1,13 @@
+def split_reverse(phrase):
+    new_phrase=phrase.split()
+    b = []
+    c = len(new_phrase)
+    while c>0:
+        c-=1
+        b.append(new_phrase[c])
+    new_phrase=" ".join(b)
+    print(new_phrase)
+
+a = input("Please enter a sentence:")
+
+split_reverse(a)
