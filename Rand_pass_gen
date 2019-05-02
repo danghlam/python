@@ -1,0 +1,13 @@
+import random
+import string
+new_pass = []
+b=5
+while b>0:
+    n = random.randint(0,9)
+    n = str(n)
+    new_pass.append(n)
+    x = random.choice(string.ascii_letters)
+    new_pass.append(x)
+    b-=1
+new_pass = "".join(new_pass)
+print(new_pass)
