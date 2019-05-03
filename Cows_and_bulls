@@ -11,9 +11,9 @@ final_answer = ran_answer()
 
 def your_guess():
     guess = [] #your guess
-    while len(guess)<4:
-        num = int(input("Please enter a number for your list: "))
-        guess.append(num)
+    num = input("Please enter a number for your list: ")
+    num = str(num)
+    guess = [int(z) for z in num]
     return guess
 
 d = 0 #continue or stop game
@@ -43,6 +43,3 @@ while d < 1:
     print("")
 print("This is guess #",g)
 print("The correct sequence is",final_answer)
-
-
-    
