@@ -42,4 +42,6 @@ while d < 1:
             break
     print("")
 print("This is guess #",g)
+final_answer=[str(l) for l in final_answer]
+final_answer = "".join(final_answer)
 print("The correct sequence is",final_answer)
