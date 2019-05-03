@@ -1,0 +1,48 @@
+import random
+g = 0 #guess count
+def ran_answer():
+    answer= [] #random answer
+    while len(answer)<4:
+        a=random.randint(0,9)
+        answer.append(a)
+    return answer
+
+final_answer = ran_answer()
+
+def your_guess():
+    guess = [] #your guess
+    while len(guess)<4:
+        num = int(input("Please enter a number for your list: "))
+        guess.append(num)
+    return guess
+
+d = 0 #continue or stop game
+while d < 1:
+    final_guess = your_guess() #test whether your guess is correct
+    g+=1 #add to your guess count
+    b = 0 #check each list item 
+    for c in final_guess:
+        print(final_answer[b])
+        if c==final_answer[b]:
+            print("cow")
+            b+=1
+        else:
+            print("bull")
+            b+=1
+    if final_answer==final_guess:
+        print("You guess all the numbers correctly!")
+        break
+    else:
+        print("You didn't guess the correct sequence")
+        cont=input("Would you like to guess again?(Y/N): ")
+        if cont=="y":
+            continue
+        elif cont=="n":
+            d += 2
+            break
+    print("")
+print("This is guess #",g)
+print("The correct sequence is",final_answer)
+
+
+    
