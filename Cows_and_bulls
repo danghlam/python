@@ -22,7 +22,7 @@ while d < 1:
     g+=1 #add to your guess count
     b = 0 #check each list item 
     for c in final_guess:
-        print(final_answer[b])
+        print(final_guess[b])
         if c==final_answer[b]:
             print("cow")
             b+=1
