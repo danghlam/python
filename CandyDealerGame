@@ -4,32 +4,46 @@ import random
 
 yourInv = {"gold":0}
 itemValue = {"lollipop": 5, "jaw breaker": 7, "gum": 8, "candy bar": 10, "giant tootsie roll": 15, "giant lollipop": 20}
+#game action menu function
 def gameActions():
   print("What would you like to do?:")
   print("1. Look for a buyer\n2. Shop\n3. Look at\
   your inventory")
-  y = input("")
-  return y
-
+  firstAction = input("")
+  return firstAction
 #game intro
 print("Welcome to the town of Candyland \n\
 where the kids have a big sweet tooth \n\
 and they will do everything they can to get \n\
 their hands on some candy")
+
 playerName = input("Tell me what is your name?: ")
+
 print("Well ", playerName, ", welcome. I hope you are ready \n\
 to start making some big money")
+
 print("I'll start you off by giving you some candy \n\
 to start selling")
+
 yourInv['lollipop'] = 2
 print("\nYou received 2 Lollipops\nAlright you're on your own now")
+gameActions()
+# character values 
+Bart = {"str": 15, "intel": 10, "money":10}
+Lisa = {"str": 5, "intel": 15, "money":10}
+Milhouse = {"str": 5, "intel": 5, "money":15}
+Ralph = {"str": 20, "intel": 5, "money":10}
 
-x = gameActions()
-#buyer characteristics value 
-buyer1 = {"str": 5, "intel": 15, "money":15}
-buyer2 = {"str": 10, "intel": 10, "money":10}
-buyer3 = {"str": 15, "intel": 10, "money":5}
-buyer4 = {"str": 20, "intel": 5, "money":15}
-
-#different functions for different game gameActions
-def getBuyer():
+#chance of meeting character
+youMeet = 0
+def chanceChar():
+  chance = random.randrange(1,20)
+  if chance in {1,6}:
+    youMeet = Bart
+  elif chance in {6,12}:
+    youMeet = Lisa
+  elif chance in {12,18}:
+    youMeet = Milhouse
+  else:
+    youMeet = Ralph
+  return youMeet
