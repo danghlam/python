@@ -2,8 +2,9 @@
 #Candy dealer game
 import random
 
+#your iventory
 yourInv = {"gold":0}
-itemValue = {"lollipop": 5, "jaw breaker": 7, "gum": 8, "candy bar": 10, "giant tootsie roll": 15, "giant lollipop": 20}
+
 #game action menu function
 def gameActions():
   print("What would you like to do?:")
@@ -12,27 +13,34 @@ def gameActions():
   firstAction = input("")
   return firstAction
 
+#player store to buy items and candy
+def playerStore():
+  storeItems = {"lollipop": 1, "tootsie roll": 3, "pop rocks": 5,\
+  "M&Ms": 7, "Ultimate candy bar": 20, "sling shot": 5, "new shirt": 5\
+  "blue hat": 4}
+  print("Welcome to the Kwik-E Mart, what would you like to buy?")
+  for x, y in storeItems.items()
+    print(x,y)
+  itemBuy = input(" ")
+  if itemBuy == "lollipop":
+    
+
+
 #game intro
-print("Welcome to the town of Candyland \n\
-where the kids have a big sweet tooth \n\
-and they will do everything they can to get \n\
-their hands on some candy")
+#blah blah blah
 playerName = input("Tell me what is your name?: ")
-print("Well ", playerName, ", welcome. I hope you are ready \n\
-to start making some big money")
 print("I'll start you off by giving you some candy \n\
 to start selling")
 yourInv['lollipop'] = 2
-print("\nYou received 2 Lollipops\nAlright you're on your own now")
-
+print("\nYou received 2 Lollipops")
 #start game with first action
-begin = gameActions()
 
-# character values 
-Bart = {"name1": "Bart", "str": 15, "intel": 10, "money":10}
-Lisa = {"name2": "Lisa", "str": 5, "intel": 15, "money":10}
-Milhouse = {"name3": "Milhouse", "str": 5, "intel": 5, "money":15}
-Ralph = {"name4": "Ralph", "str": 20, "intel": 5, "money":10}
+# character values
+Bart = {"isBart": "Bart", "str": 15, "intel": 10, "money":10}
+Lisa = {"isLisa": "Lisa", "str": 5, "intel": 15, "money":10}
+Milhouse = {"isMilhouse": "Milhouse", "str": 5, "intel": 5, "money":15}
+Ralph = {"isRalph": "Ralph", "str": 20, "intel": 5, "money":10}
+
 #chance of meeting character
 def chanceChar():
   chance = random.randrange(1,20)
@@ -46,5 +54,16 @@ def chanceChar():
     youMeet = Ralph
   return youMeet
 
-if begin == "1":
-  chanceChar()
+#Game last 20 days - try to get as high a score as possible ie most money
+days = 20
+while days>0:
+  action = gameActions
+  if action == "1":
+    chanceChar()
+  elif begin == "2":
+    playerStore()
+  elif begin == "3":
+    print(yourInv())
+  else:
+    print("You made an invalid entry, choose your action again")
+    continue
